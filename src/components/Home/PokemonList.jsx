@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PokemonCard from "./PokemonCard";
 
 function PokemonList(props) {
   const [pokemonsData, setPokemonsData] = useState([]);
@@ -30,29 +31,21 @@ function PokemonList(props) {
       setPokemonsData([]);
       props.pokemonList.forEach((item) => getPokemonData(item.name));
     }
-  }, [props.pokemonList]);
 
-  useEffect(() => {
-    console.log(props.pokemonList);
-    console.log(pokemonsData);
-  }, [props.pokemonList, pokemonsData]);
+    // eslint-disable-next-line
+  }, [props.pokemonList]);
 
   return (
     <div className="w-full grid grid-cols-2 gap-4 pt-10 pb-8">
       {props.pokemonList &&
         pokemonsData.length !== 0 &&
         pokemonsData.map((item, i) => (
-          <div
-            key={Math.random() + item + ""}
-            className="w-full h-32 bg-primaryGrey rounded-lg shadow-xl"
-          >
-            <h1>{i + 1}</h1>
-            <p>{item.order}</p>
-            <img src={item.sprites["front_default"]} alt="pokemon" />
-            {/* <h1>{item.name}</h1>
-            <p>{item.url}</p>
-            <p>{i + 1}</p> */}
-          </div>
+          <PokemonCard
+            key={Math.random() + i + ""}
+            name={item.name}
+            types={item.types}
+            sprites={item.sprites}
+          />
         ))}
     </div>
   );
