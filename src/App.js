@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 function App() {
   return (
     <BrowserRouter>
-      <div className="overflow-x-hidden">
+      <div className="overflow-x-hidden bg-primaryWhite">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:name" element={<Detail />} />

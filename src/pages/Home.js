@@ -5,7 +5,7 @@ import pokeball from "../assets/pokeball.png";
 
 function Home() {
   return (
-    <div className="bg-primaryWhite w-full min-h-[100vh] relative mx-auto">
+    <div className="w-full min-h-[100vh] relative mx-auto">
       <img
         src={pokeball}
         alt="pokeball"

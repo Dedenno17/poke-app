@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PokemonCard from "./PokemonCard";
+import SkeletonLoading from "./SkeletonLoading";
 
 function PokemonList(props) {
   const [pokemonsData, setPokemonsData] = useState([]);
@@ -36,8 +37,8 @@ function PokemonList(props) {
   }, [props.pokemonList]);
 
   return (
-    <div className="w-full grid grid-cols-2 gap-4 pt-10 pb-8">
-      {props.pokemonList &&
+    <div className="w-full min-h-[100vh] grid grid-cols-2 gap-4 pt-10 pb-8">
+      {props.pokemonList.length !== 0 &&
         pokemonsData.length !== 0 &&
         pokemonsData.map((item, i) => (
           <PokemonCard
@@ -46,6 +47,11 @@ function PokemonList(props) {
             types={item.types}
             sprites={item.sprites}
           />
+        ))}
+      {pokemonsData.length === 0 &&
+        props.pokemonList.length === 0 &&
+        [1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+          <SkeletonLoading key={Math.random() + item + ""} />
         ))}
     </div>
   );
