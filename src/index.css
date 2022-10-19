@@ -9,3 +9,10 @@
     font-family: "Poppins", sans-serif;
   }
 }
+
+@layer utilities {
+  .filter-black {
+    filter: invert(22%) sepia(14%) saturate(543%) hue-rotate(171deg)
+      brightness(91%) contrast(97%);
+  }
+}
