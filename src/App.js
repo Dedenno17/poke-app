@@ -1,7 +1,11 @@
+import Detail from "./pages/Detail";
+import Home from "./pages/Home";
+
 function App() {
   return (
     <div className="App">
-      <h1 className="text-5xl text-blue-500 font-semibold">Hello React</h1>
+      <Home />
+      <Detail />
     </div>
   );
 }
