@@ -1,10 +1,76 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import pokeball from "../../assets/pokeball.png";
 
 function PokemonCard(props) {
+  const [colorType, setColorType] = useState("");
+
+  useEffect(() => {
+    switch (props.types[0].type.name) {
+      case "bug":
+        setColorType("#27cb50");
+        break;
+      case "grass":
+        setColorType("#27cb50");
+        break;
+      case "steel":
+        setColorType("#27cb50");
+        break;
+      case "dark":
+        setColorType("#906791");
+        break;
+      case "poison":
+        setColorType("#906791");
+        break;
+      case "ghost":
+        setColorType("#906791");
+        break;
+      case "dragon":
+        setColorType("#62cad9");
+        break;
+      case "ice":
+        setColorType("#62cad9");
+        break;
+      case "water":
+        setColorType("#62cad9");
+        break;
+      case "flying":
+        setColorType("#62cad9");
+        break;
+      case "electric":
+        setColorType("#fafa72");
+        break;
+      case "fairy":
+        setColorType("#fd4b5a");
+        break;
+      case "fire":
+        setColorType("#fd4b5a");
+        break;
+      case "psychic":
+        setColorType("#fd4b5a");
+        break;
+      case "ground":
+        setColorType("#8b3e22");
+        break;
+      case "rock":
+        setColorType("#8b3e22");
+        break;
+      case "fighting":
+        setColorType("#ef6239");
+        break;
+      case "normal":
+        setColorType("#8b3e22");
+        break;
+      default:
+        setColorType("#dcdee0");
+    }
+  }, [props.types]);
+
   return (
-    <div className="w-full h-32 bg-primaryGrey rounded-lg shadow-xl relative overflow-hidden">
+    <div
+      className={`w-full h-32 rounded-lg shadow-xl relative overflow-hidden`}
+      style={{ backgroundColor: colorType }}
+    >
       <img
         src={pokeball}
         alt="pokeball"
