@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 
-export default function PokemonList() {
+function PokemonList(props) {
   const [pokemonList, setPokemonList] = useState([]);
   //   const [pokemonsData, setPokemonsData] = useState([]);
 
@@ -8,7 +8,7 @@ export default function PokemonList() {
     const getPokemonList = async () => {
       try {
         const res = await fetch(
-          "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0"
+          "https://pokeapi.co/api/v2/pokemon?limit=20&offset=" + props.page
         );
         if (!res.ok) {
           throw new Error("Something went wrong!");
@@ -21,7 +21,7 @@ export default function PokemonList() {
     };
 
     getPokemonList();
-  }, []);
+  }, [props.page]);
 
   //   useEffect(() => {
   //     const getPokemonData = async (name) => {
@@ -63,3 +63,5 @@ export default function PokemonList() {
     </div>
   );
 }
+
+export default memo(PokemonList);
