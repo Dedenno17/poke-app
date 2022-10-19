@@ -3,7 +3,7 @@ import React from "react";
 import angleLeft from "../../assets/angle-left-solid.svg";
 import angleٌRight from "../../assets/angle-right-solid.svg";
 
-export default function Pagination(props) {
+function Pagination(props) {
   return (
     <div
       className={`w-full flex items-center ${
@@ -35,3 +35,5 @@ export default function Pagination(props) {
     </div>
   );
 }
+
+export default React.memo(Pagination);
