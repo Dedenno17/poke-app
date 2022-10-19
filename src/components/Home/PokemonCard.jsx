@@ -68,7 +68,7 @@ function PokemonCard(props) {
 
   return (
     <div
-      className={`w-full h-32 rounded-lg shadow-xl relative overflow-hidden`}
+      className="w-full h-32 rounded-lg shadow-xl relative overflow-hidden transition-all active:scale-110"
       style={{ backgroundColor: colorType }}
     >
       <img
