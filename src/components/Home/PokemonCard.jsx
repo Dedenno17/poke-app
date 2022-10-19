@@ -38,7 +38,7 @@ function PokemonCard(props) {
         setColorType("#62cad9");
         break;
       case "electric":
-        setColorType("#fafa72");
+        setColorType("#FFB200");
         break;
       case "fairy":
         setColorType("#fd4b5a");
@@ -84,7 +84,7 @@ function PokemonCard(props) {
           {props.types.map((item, i) => (
             <span
               key={Math.random() + i + ""}
-              className="flex items-center justify-center w-[60%] py-1 px-2 rounded-full bg-primaryBlack text-primaryWhite text-[10px] mb-1"
+              className="flex items-center justify-center w-[60%] py-1 px-2 rounded-full text-primaryWhite text-[10px] mb-1 bg-primaryBlack/20"
             >
               {item.type.name}
             </span>
@@ -100,4 +100,4 @@ function PokemonCard(props) {
   );
 }
 
-export default PokemonCard;
+export default React.memo(PokemonCard);
