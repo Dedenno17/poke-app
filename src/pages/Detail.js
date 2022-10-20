@@ -5,6 +5,8 @@ import DetailComponent from "../components/Detail/DetailComponent";
 function Detail() {
   const { name } = useParams();
 
+  console.log(name)
+
   return (
     <div className="w-full">
       <DetailComponent name={name} />
