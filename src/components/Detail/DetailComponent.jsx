@@ -1,13 +1,40 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 import pokeball from "../../assets/pokeball.png";
+import dotPattern from "../../assets/dot-pattern.png";
 
-function PokemonCard(props) {
+function DetailComponent(props) {
+  const [pokemonData, setPokemonData] = useState(undefined);
   const [colorType, setColorType] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    switch (props.types[0].type.name) {
+    const getPokemonData = async () => {
+      try {
+        const res = await fetch(
+          "https://pokeapi.co/api/v2/pokemon/" + props.name
+        );
+        if (!res.ok) {
+          throw new Error("Failed to Fetch!");
+        }
+        const data = await res.json();
+        setPokemonData(data);
+        setIsLoading(false);
+      } catch (err) {
+        setIsLoading(false);
+        alert(err.message);
+      }
+    };
+
+    getPokemonData();
+  }, [props.name]);
+
+  useEffect(() => {
+    if (!pokemonData) {
+      return;
+    }
+
+    switch (pokemonData.types[0].type.name) {
       case "bug":
         setColorType("#27cb50");
         break;
@@ -65,42 +92,26 @@ function PokemonCard(props) {
       default:
         setColorType("#dcdee0");
     }
-  }, [props.types]);
+  }, [pokemonData]);
+
+  useEffect(() => {
+    console.log(pokemonData);
+  }, [pokemonData]);
 
   return (
-    <Link to={`/${props.name}`}>
-      <div
-        className="w-full h-32 rounded-lg shadow-xl relative overflow-hidden transition-all active:scale-110"
-        style={{ backgroundColor: colorType }}
-      >
-        <img
-          src={pokeball}
-          alt="pokeball"
-          className="absolute w-24 h-24 -bottom-4 -right-4 opacity-50"
-        />
-        <div className="absolute w-full h-full top-0 left-0 p-3">
-          <div className="w-[60%] h-full">
-            <h1 className="text-md text-primaryWhite font-bold mb-2">
-              {props.name.toUpperCase()}
-            </h1>
-            {props.types.map((item, i) => (
-              <span
-                key={Math.random() + i + ""}
-                className="flex items-center justify-center w-[60%] py-1 px-2 rounded-full text-primaryWhite text-[10px] mb-1 bg-primaryBlack/20"
-              >
-                {item.type.name}
-              </span>
-            ))}
-          </div>
-        </div>
-        <img
-          src={props.sprites["front_default"]}
-          alt="pokemon"
-          className="absolute w-[60%] bottom-0 right-0 z-20"
-        />
+    <div
+      className="w-full min-h-[100vh] flex justify-between items-center"
+      style={{ backgroundColor: colorType }}
+    >
+      <div className="w-[50%] h-full flex -translate-y-32 opacity-60">
+        <img src={dotPattern} alt="dot pattern" className="w-[30%] m-auto" />
       </div>
-    </Link>
+      <div className="w-[50%] h-full -translate-y-14 translate-x-8 opacity-60">
+        <img src={pokeball} alt="pokeball" className="w-full" />
+      </div>
+      {/* <h1>{props.name}</h1> */}
+    </div>
   );
 }
 
-export default React.memo(PokemonCard);
+export default React.memo(DetailComponent);
