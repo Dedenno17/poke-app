@@ -70,7 +70,7 @@ function DetailComponent(props) {
         <img
           src={pokemonData.sprites.other.home["front_default"]}
           alt="pokemon"
-          className="absolute w-[60%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-[75%]"
+          className="absolute w-[60%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-[75%] md:-translate-y-[83%] lg:w-[55%] lg:-translate-x-[90%] lg:-translate-y-[45%]"
         />
       )}
     </div>

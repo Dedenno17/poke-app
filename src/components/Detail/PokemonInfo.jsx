@@ -33,13 +33,13 @@ function PokemonInfo(props) {
   }, [props.pokemonData]);
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 w-full h-[45%] p-6 bg-primaryWhite shadow-xl flex flex-col justify-between items-center rounded-t-3xl">
+    <div className="absolute bottom-0 left-0 right-0 w-full h-[45%] px-6 py-6 bg-primaryWhite shadow-xl flex flex-col justify-between items-center rounded-t-3xl md:px-12 lg:hidden">
       <ul className="w-full h-[25%] flex justify-between items-center">
         {pageInfo.map((item, i) => (
           <li
             key={Math.random() + i + ""}
             onClick={() => setCurrentPage(item.toLowerCase())}
-            className={`py-4 px-1 h-full flex justify-center items-center text-sm font-semibold ${
+            className={`py-4 px-1 h-full flex justify-center items-center text-sm font-semibold md:text-lg ${
               currentPage === item.toLocaleLowerCase()
                 ? "border-b-primaryBlack border-b-2"
                 : ""

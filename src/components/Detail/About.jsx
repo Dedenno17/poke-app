@@ -13,21 +13,21 @@ function About(props) {
 
   return (
     <div className="w-full h-full flex flex-col justify-between items-center">
-      <div className="w-full flex justify-between items-center text-sm font-semibold">
+      <div className="w-full flex justify-between items-center text-sm font-semibold md:text-lg">
         <span className="w-[25%] opacity-50">Species</span>
         <span className="w-[70%]">
           {firstCapitalLetter(props.species.name)}
         </span>
       </div>
-      <div className="w-full flex justify-between items-center text-sm font-semibold">
+      <div className="w-full flex justify-between items-center text-sm font-semibold md:text-lg">
         <span className="w-[25%] opacity-50">Height</span>
         <span className="w-[70%]">{props.height} cm</span>
       </div>
-      <div className="w-full flex justify-between items-center text-sm font-semibold">
+      <div className="w-full flex justify-between items-center text-sm font-semibold md:text-lg">
         <span className="w-[25%] opacity-50">Weight</span>
         <span className="w-[70%]">{props.weight} kg</span>
       </div>
-      <div className="w-full flex justify-between items-center text-sm font-semibold">
+      <div className="w-full flex justify-between items-center text-sm font-semibold md:text-lg">
         <span className="w-[25%] opacity-50">Abilities</span>
         <span className="w-[70%]">{queueAbility(props.abilities)}</span>
       </div>

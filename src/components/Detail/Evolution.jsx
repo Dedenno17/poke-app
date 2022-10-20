@@ -29,7 +29,7 @@ function Evolution(props) {
     <div className="w-full h-full flex justify-between items-center">
       {evolutionPokemon.length !== 0 && (
         <>
-          <div className="w-1/2 text-3xl font-bold text-primaryBlack flex">
+          <div className="w-1/2 text-3xl font-bold text-primaryBlack flex md:text-4xl">
             <h3 className="m-auto">
               {firstCapitalLetter(evolutionPokemon.name)}
             </h3>
@@ -38,7 +38,7 @@ function Evolution(props) {
             <img
               src={evolutionPokemon.sprites["front_default"]}
               alt="evolution"
-              className="w-full m-auto"
+              className="w-full m-auto md:w-[80%]"
             />
           </div>
         </>

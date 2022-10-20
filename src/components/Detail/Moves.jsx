@@ -10,11 +10,11 @@ function Moves(props) {
           alt="pokemon"
         />
       </div>
-      <div className="w-[65%] grid grid-cols-3 gap-1">
+      <div className="w-[65%] grid grid-cols-3 gap-1 md:gap-3">
         {props.moves.slice(0, 15).map((item, i) => (
           <span
             key={Math.random() + i + ""}
-            className="bg-primaryGrey text-[10px] flex justify-center items-center py-1 rounded-full"
+            className="bg-primaryGrey text-[10px] flex justify-center items-center py-1 rounded-full md:text-[14px]"
           >
             {item.move.name}
           </span>

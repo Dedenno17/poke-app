@@ -5,10 +5,10 @@ import DetailComponent from "../components/Detail/DetailComponent";
 function Detail() {
   const { name } = useParams();
 
-  console.log(name)
+  console.log(name);
 
   return (
-    <div className="w-full">
+    <div className="max-w-[1033px] mx-auto">
       <DetailComponent name={name} />
     </div>
   );
