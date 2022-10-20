@@ -8,7 +8,8 @@ function BaseStat(props) {
         <span className="w-[10%]">{props.stats[0]["base_stat"]}</span>
         <span className="w-[65%] h-[20%]">
           <span
-            className={`w-[${props.stats[0]["base_stat"]}%] h-full block rounded-full bg-red-400 `}
+            className="h-full block rounded-full bg-red-400"
+            style={{ width: props.stats[0]["base_stat"] + "%" }}
           ></span>
         </span>
       </div>
@@ -17,7 +18,8 @@ function BaseStat(props) {
         <span className="w-[10%]">{props.stats[1]["base_stat"]}</span>
         <span className="w-[65%] h-[20%]">
           <span
-            className={`w-[${props.stats[1]["base_stat"]}%] h-full block rounded-full bg-green-500 `}
+            className="h-full block rounded-full bg-green-400"
+            style={{ width: props.stats[1]["base_stat"] + "%" }}
           ></span>
         </span>
       </div>
@@ -26,7 +28,8 @@ function BaseStat(props) {
         <span className="w-[10%]">{props.stats[2]["base_stat"]}</span>
         <span className="w-[65%] h-[20%]">
           <span
-            className={`w-[${props.stats[2]["base_stat"]}%] h-full block rounded-full bg-red-400 `}
+            className="h-full block rounded-full bg-red-400"
+            style={{ width: props.stats[2]["base_stat"] + "%" }}
           ></span>
         </span>
       </div>
@@ -35,7 +38,8 @@ function BaseStat(props) {
         <span className="w-[10%]">{props.stats[3]["base_stat"]}</span>
         <span className="w-[65%] h-[20%]">
           <span
-            className={`w-[${props.stats[3]["base_stat"]}%] h-full block rounded-full bg-green-500`}
+            className="h-full block rounded-full bg-green-400"
+            style={{ width: props.stats[3]["base_stat"] + "%" }}
           ></span>
         </span>
       </div>
@@ -44,7 +48,8 @@ function BaseStat(props) {
         <span className="w-[10%]">{props.stats[4]["base_stat"]}</span>
         <span className="w-[65%] h-[20%]">
           <span
-            className={`w-[${props.stats[4]["base_stat"]}%] h-full block rounded-full bg-green-500`}
+            className="h-full block rounded-full bg-green-400"
+            style={{ width: props.stats[4]["base_stat"] + "%" }}
           ></span>
         </span>
       </div>

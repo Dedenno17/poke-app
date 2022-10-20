@@ -66,7 +66,7 @@ function DetailComponent(props) {
           order={pokemonData.order}
         />
       )}
-      <PokemonInfo pokemonData={pokemonData} />
+      {pokemonData && !isLoading && <PokemonInfo pokemonData={pokemonData} />}
       {pokemonData && isLoading && <SkeletonLoadingHead />}
     </div>
   );
