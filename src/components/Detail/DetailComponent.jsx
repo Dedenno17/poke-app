@@ -7,6 +7,10 @@ import HeadName from "./HeadName";
 import SkeletonLoadingHead from "./SkeletonLoadingHead";
 import PokemonInfo from "./PokemonInfo";
 import SkeletonLoadingInfo from "./SkeletonLoadingInfo";
+import AboutLarge from "./AboutLarge";
+import BaseStatLarge from "./BaseStatLarge";
+import MovesLarge from "./MovesLarge";
+import EvolutionLarge from "./EvolutionLarge";
 
 function DetailComponent(props) {
   const [pokemonData, setPokemonData] = useState(undefined);
@@ -66,6 +70,19 @@ function DetailComponent(props) {
       {pokemonData && !isLoading && <PokemonInfo pokemonData={pokemonData} />}
       {pokemonData && isLoading && <SkeletonLoadingHead />}
       {pokemonData && isLoading && <SkeletonLoadingInfo />}
+      {pokemonData && !isLoading && (
+        <div className="hidden lg:flex lg:flex-col lg:justify-around absolute top-36 right-0 bottom-10 w-1/2 pr-5">
+          <AboutLarge
+            species={pokemonData.species}
+            height={pokemonData.height}
+            weight={pokemonData.weight}
+            abilities={pokemonData.abilities}
+          />
+          <BaseStatLarge stats={pokemonData.stats} />
+          <EvolutionLarge pokemonData={pokemonData} />
+          <MovesLarge moves={pokemonData.moves} sprites={pokemonData.sprites} />
+        </div>
+      )}
       {pokemonData && !isLoading && (
         <img
           src={pokemonData.sprites.other.home["front_default"]}

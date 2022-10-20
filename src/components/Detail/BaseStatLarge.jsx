@@ -1,7 +1,60 @@
 import React from "react";
 
-function BaseStatLarge() {
-  return <div>BaseStatLarge</div>;
+function BaseStatLarge(props) {
+  return (
+    <div className="w-full h-[23%] flex flex-col justify-between items-center p-5 bg-primaryWhite rounded-3xl shadow-xl">
+      <div className="w-full flex justify-between items-center text-sm font-semibold pr-2 md:text-lg lg:text-sm">
+        <span className="w-[20%] opacity-50">HP</span>
+        <span className="w-[10%]">{props.stats[0]["base_stat"]}</span>
+        <span className="w-[65%] h-[20%]">
+          <span
+            className="h-full block rounded-full bg-red-400"
+            style={{ width: props.stats[0]["base_stat"] + "%" }}
+          ></span>
+        </span>
+      </div>
+      <div className="w-full flex justify-between items-center text-sm font-semibold pr-2 md:text-lg lg:text-sm">
+        <span className="w-[20%] opacity-50">Attack</span>
+        <span className="w-[10%]">{props.stats[1]["base_stat"]}</span>
+        <span className="w-[65%] h-[20%]">
+          <span
+            className="h-full block rounded-full bg-green-400"
+            style={{ width: props.stats[1]["base_stat"] + "%" }}
+          ></span>
+        </span>
+      </div>
+      <div className="w-full flex justify-between items-center text-sm font-semibold pr-2 md:text-lg lg:text-sm">
+        <span className="w-[20%] opacity-50">Defense</span>
+        <span className="w-[10%]">{props.stats[2]["base_stat"]}</span>
+        <span className="w-[65%] h-[20%]">
+          <span
+            className="h-full block rounded-full bg-red-400"
+            style={{ width: props.stats[2]["base_stat"] + "%" }}
+          ></span>
+        </span>
+      </div>
+      <div className="w-full flex justify-between items-center text-sm font-semibold pr-2 md:text-lg lg:text-sm">
+        <span className="w-[20%] opacity-50">Sp.Atk</span>
+        <span className="w-[10%]">{props.stats[3]["base_stat"]}</span>
+        <span className="w-[65%] h-[20%]">
+          <span
+            className="h-full block rounded-full bg-green-400"
+            style={{ width: props.stats[3]["base_stat"] + "%" }}
+          ></span>
+        </span>
+      </div>
+      <div className="w-full flex justify-between items-center text-sm font-semibold pr-2 md:text-lg lg:text-sm">
+        <span className="w-[20%] opacity-50">Sp.Def</span>
+        <span className="w-[10%]">{props.stats[4]["base_stat"]}</span>
+        <span className="w-[65%] h-[20%]">
+          <span
+            className="h-full block rounded-full bg-green-400"
+            style={{ width: props.stats[4]["base_stat"] + "%" }}
+          ></span>
+        </span>
+      </div>
+    </div>
+  );
 }
 
 export default BaseStatLarge;

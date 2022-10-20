@@ -2,7 +2,7 @@ import React from "react";
 
 function SkeletonLoadingInfo() {
   return (
-    <div className="absolute bottom-0 left-0 right-0 w-full h-[45%] p-6 bg-primaryWhite shadow-xl flex flex-col justify-between items-center rounded-t-3xl">
+    <div className="absolute bottom-0 left-0 right-0 w-full h-[45%] p-6 bg-primaryWhite shadow-xl flex flex-col justify-between items-center rounded-t-3xl lg:hidden">
       <ul className="w-full h-[25%] flex justify-between items-center animate-pulse">
         {[1, 2, 3, 4].map((item) => (
           <li

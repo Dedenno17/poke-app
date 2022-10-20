@@ -8,7 +8,7 @@ function Detail() {
   console.log(name);
 
   return (
-    <div className="max-w-[1033px] mx-auto">
+    <div className="w-full mx-auto">
       <DetailComponent name={name} />
     </div>
   );
