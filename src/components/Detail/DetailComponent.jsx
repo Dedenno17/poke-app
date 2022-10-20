@@ -51,7 +51,7 @@ function DetailComponent(props) {
 
   return (
     <div
-      className="w-full min-h-[100vh] flex justify-between items-center relative"
+      className="w-full min-h-[100vh] flex justify-between items-center relative lg:min-h-[150vh]"
       style={{ backgroundColor: colorType }}
     >
       <div className="w-[50%] h-full flex -translate-y-32 opacity-40">

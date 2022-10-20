@@ -5,10 +5,8 @@ import DetailComponent from "../components/Detail/DetailComponent";
 function Detail() {
   const { name } = useParams();
 
-  console.log(name);
-
   return (
-    <div className="w-full mx-auto">
+    <div className="w-full min-h-[100vh] mx-auto">
       <DetailComponent name={name} />
     </div>
   );

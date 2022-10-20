@@ -14,7 +14,7 @@ function PokemonCard(props) {
   return (
     <Link to={`/${props.name}`}>
       <div
-        className="w-full h-32 rounded-lg shadow-xl relative overflow-hidden transition-all active:scale-110 cursor-pointer lg:hover:scale-110 xl:h-full"
+        className="w-full h-32 rounded-lg shadow-xl relative overflow-hidden transition-all active:scale-110 cursor-pointer lg:hover:scale-110"
         style={{ backgroundColor: colorType }}
       >
         <img
@@ -40,7 +40,7 @@ function PokemonCard(props) {
         <img
           src={props.sprites["front_default"]}
           alt="pokemon"
-          className="absolute w-[60%] bottom-0 right-0 z-20 xl:w-[85%]"
+          className="absolute w-[60%] bottom-0 right-0 z-20"
         />
       </div>
     </Link>

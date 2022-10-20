@@ -6,7 +6,7 @@ function HeadName(props) {
   return (
     <div className="absolute top-0 right-0 left-0 flex justify-between items-center p-8 lg:p-14">
       <div className="w-[60%]">
-        <h1 className="text-3xl text-primaryWhite font-bold mb-2 md:text-5xl">
+        <h1 className="text-3xl text-primaryWhite font-bold mb-2 md:text-5xl lg:mb-8">
           {firstCapitalLetter(props.name)}
         </h1>
         <div className="w-full flex items-center">
