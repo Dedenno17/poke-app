@@ -6,8 +6,10 @@ import PokemonList from "./PokemonList";
 export default function HomeComponent() {
   const [page, setPage] = useState(0);
   const [pokemonList, setPokemonList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const nextPage = () => {
+    setIsLoading(true);
     setPage((prevState) => prevState + 20);
   };
 
@@ -16,6 +18,7 @@ export default function HomeComponent() {
       return;
     }
 
+    setIsLoading(true);
     setPage((prevState) => prevState - 20);
   };
 
@@ -30,7 +33,9 @@ export default function HomeComponent() {
         }
         const data = await res.json();
         setPokemonList(data.results);
+        setIsLoading(false);
       } catch (err) {
+        setIsLoading(false);
         alert(err.message);
       }
     };
@@ -43,7 +48,11 @@ export default function HomeComponent() {
   return (
     <div className="absolute top-0 left-0 right-0 pt-10 px-4">
       <h1 className="text-4xl text-primaryBlack font-semibold">Pokedex</h1>
-      <PokemonList page={page} pokemonList={pokemonList} />
+      <PokemonList
+        page={page}
+        pokemonList={pokemonList}
+        isLoading={isLoading}
+      />
       <Pagination page={page} onNextPage={nextPage} onPrevPage={prevPage} />
     </div>
   );

@@ -39,6 +39,7 @@ function PokemonList(props) {
   return (
     <div className="w-full min-h-[100vh] grid grid-cols-2 gap-4 pt-10 pb-8">
       {props.pokemonList.length !== 0 &&
+        !props.isLoading &&
         pokemonsData.length !== 0 &&
         pokemonsData.map((item, i) => (
           <PokemonCard
@@ -48,8 +49,7 @@ function PokemonList(props) {
             sprites={item.sprites}
           />
         ))}
-      {pokemonsData.length === 0 &&
-        props.pokemonList.length === 0 &&
+      {props.isLoading &&
         [
           1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
         ].map((item) => <SkeletonLoading key={Math.random() + item + ""} />)}
