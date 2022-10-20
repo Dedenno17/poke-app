@@ -1,4 +1,5 @@
 import React from "react";
+import firstCapitalLetter from "../../helpers/firstCapitalLetter";
 
 function HeadName(props) {
   return (
@@ -13,7 +14,7 @@ function HeadName(props) {
               key={Math.random() + i + ""}
               className="py-1 px-4 mr-2 bg-primaryWhite/20 rounded-full text-xs shadow-sm text-primaryWhite"
             >
-              {item.type.name}
+              {firstCapitalLetter(item.type.name)}
             </span>
           ))}
         </div>
