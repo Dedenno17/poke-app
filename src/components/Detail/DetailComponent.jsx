@@ -4,6 +4,7 @@ import choosenColorType from "../../helpers/choosenColorType";
 import pokeball from "../../assets/pokeball.png";
 import dotPattern from "../../assets/dot-pattern.png";
 import HeadName from "./HeadName";
+import SkeletonLoadingHead from "./SkeletonLoadingHead";
 
 function DetailComponent(props) {
   const [pokemonData, setPokemonData] = useState(undefined);
@@ -21,7 +22,6 @@ function DetailComponent(props) {
         }
         const data = await res.json();
         setPokemonData(data);
-        setIsLoading(false);
       } catch (err) {
         setIsLoading(false);
         alert(err.message);
@@ -29,6 +29,10 @@ function DetailComponent(props) {
     };
 
     getPokemonData();
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
   }, [props.name]);
 
   useEffect(() => {
@@ -57,6 +61,7 @@ function DetailComponent(props) {
           order={pokemonData.order}
         />
       )}
+      {pokemonData && isLoading && <SkeletonLoadingHead />}
     </div>
   );
 }
