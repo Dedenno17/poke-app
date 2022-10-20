@@ -8,12 +8,12 @@ function Pagination(props) {
     <div
       className={`w-full flex items-center ${
         props.page === 0 ? "justify-end" : "justify-between"
-      } py-4`}
+      } pt-4 pb-4 lg:justify-end lg:pt-0 lg:pb-8 xl:pt-4`}
     >
       <div
         className={`${
           props.page === 0 ? "hidden" : "flex"
-        } p-4 bg-primaryGrey rounded-lg shadow-xl w-[30%] cursor-pointer hover:brightness-90`}
+        } p-4 bg-primaryGrey rounded-lg shadow-xl w-[30%] cursor-pointer hover:brightness-90 md:w-[20%] lg:w-[10%] lg:mr-8`}
         onClick={props.onPrevPage}
       >
         <img
@@ -23,7 +23,7 @@ function Pagination(props) {
         />
       </div>
       <div
-        className="flex p-4 bg-primaryGrey rounded-lg shadow-xl w-[30%] cursor-pointer hover:brightness-90"
+        className="flex p-4 bg-primaryGrey rounded-lg shadow-xl w-[30%] cursor-pointer hover:brightness-90  md:w-[20%] lg:w-[10%]"
         onClick={props.onNextPage}
       >
         <img

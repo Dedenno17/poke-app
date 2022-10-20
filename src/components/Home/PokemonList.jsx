@@ -37,7 +37,7 @@ function PokemonList(props) {
   }, [props.pokemonList]);
 
   return (
-    <div className="w-full min-h-[100vh] grid grid-cols-2 gap-4 pt-10 pb-8">
+    <div className="w-full min-h-[100vh] grid grid-cols-2 gap-x-4 gap-y-4 pt-10 pb-8 md:grid-cols-3 lg:grid-cols-5 xl:gap-y-8">
       {props.pokemonList.length !== 0 &&
         !props.isLoading &&
         pokemonsData.length !== 0 &&
