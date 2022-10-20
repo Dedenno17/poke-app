@@ -44,6 +44,10 @@ function DetailComponent(props) {
     setColorType(choosenColorType(pokemonData.types[0].type.name));
   }, [pokemonData]);
 
+  useEffect(() => {
+    console.log(pokemonData);
+  }, [pokemonData]);
+
   return (
     <div
       className="w-full min-h-[100vh] flex justify-between items-center relative"
@@ -62,7 +66,7 @@ function DetailComponent(props) {
           order={pokemonData.order}
         />
       )}
-      <PokemonInfo />
+      <PokemonInfo pokemonData={pokemonData} />
       {pokemonData && isLoading && <SkeletonLoadingHead />}
     </div>
   );

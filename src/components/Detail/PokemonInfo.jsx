@@ -1,12 +1,13 @@
 import React from "react";
+import About from "./About";
 
 const pageInfo = ["About", "Base Stat", "Evolution", "Moves"];
 
-function PokemonInfo() {
+function PokemonInfo(props) {
   // const [currentPage, setCurrentPage] = useState("about");
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 w-full h-1/2 p-6 bg-primaryWhite shadow-xl flex flex-col justify-between items-center">
+    <div className="absolute bottom-0 left-0 right-0 w-full h-[45%] p-6 bg-primaryWhite shadow-xl flex flex-col justify-between items-center">
       <ul className="w-full flex justify-between items-center bg-green-400">
         {pageInfo.map((item, i) => (
           <li
@@ -17,7 +18,14 @@ function PokemonInfo() {
           </li>
         ))}
       </ul>
-      <div className="w-full h-[70%] bg-yellow-200"></div>
+      <div className="w-full h-[70%] py-3 bg-yellow-200">
+        <About
+          species={props.pokemonData.species}
+          height={props.pokemonData.height}
+          weight={props.pokemonData.weight}
+          abilities={props.pokemonData.abilities}
+        />
+      </div>
     </div>
   );
 }
