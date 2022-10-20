@@ -5,6 +5,7 @@ import pokeball from "../../assets/pokeball.png";
 import dotPattern from "../../assets/dot-pattern.png";
 import HeadName from "./HeadName";
 import SkeletonLoadingHead from "./SkeletonLoadingHead";
+import PokemonInfo from "./PokemonInfo";
 
 function DetailComponent(props) {
   const [pokemonData, setPokemonData] = useState(undefined);
@@ -48,10 +49,10 @@ function DetailComponent(props) {
       className="w-full min-h-[100vh] flex justify-between items-center relative"
       style={{ backgroundColor: colorType }}
     >
-      <div className="w-[50%] h-full flex -translate-y-32 opacity-60">
+      <div className="w-[50%] h-full flex -translate-y-32 opacity-40">
         <img src={dotPattern} alt="dot pattern" className="w-[30%] m-auto" />
       </div>
-      <div className="w-[50%] h-full -translate-y-14 translate-x-8 opacity-60">
+      <div className="w-[50%] h-full -translate-y-14 translate-x-8 opacity-40">
         <img src={pokeball} alt="pokeball" className="w-full" />
       </div>
       {pokemonData && !isLoading && (
@@ -61,6 +62,7 @@ function DetailComponent(props) {
           order={pokemonData.order}
         />
       )}
+      <PokemonInfo />
       {pokemonData && isLoading && <SkeletonLoadingHead />}
     </div>
   );
