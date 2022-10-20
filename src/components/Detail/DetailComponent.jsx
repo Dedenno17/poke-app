@@ -6,6 +6,7 @@ import dotPattern from "../../assets/dot-pattern.png";
 import HeadName from "./HeadName";
 import SkeletonLoadingHead from "./SkeletonLoadingHead";
 import PokemonInfo from "./PokemonInfo";
+import SkeletonLoadingInfo from "./SkeletonLoadingInfo";
 
 function DetailComponent(props) {
   const [pokemonData, setPokemonData] = useState(undefined);
@@ -64,6 +65,7 @@ function DetailComponent(props) {
       )}
       {pokemonData && !isLoading && <PokemonInfo pokemonData={pokemonData} />}
       {pokemonData && isLoading && <SkeletonLoadingHead />}
+      {pokemonData && isLoading && <SkeletonLoadingInfo />}
       {pokemonData && !isLoading && (
         <img
           src={pokemonData.sprites.other.home["front_default"]}
