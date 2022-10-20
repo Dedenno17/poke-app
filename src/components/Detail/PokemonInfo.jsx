@@ -1,5 +1,7 @@
 import React from "react";
+
 import About from "./About";
+import BaseStat from "./BaseStat";
 
 const pageInfo = ["About", "Base Stat", "Evolution", "Moves"];
 
@@ -19,12 +21,13 @@ function PokemonInfo(props) {
         ))}
       </ul>
       <div className="w-full h-[70%] py-3 bg-yellow-200">
-        <About
+        {/* <About
           species={props.pokemonData.species}
           height={props.pokemonData.height}
           weight={props.pokemonData.weight}
           abilities={props.pokemonData.abilities}
-        />
+        /> */}
+        <BaseStat stats={props.pokemonData.stats} />
       </div>
     </div>
   );
