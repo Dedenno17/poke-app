@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import About from "./About";
 import BaseStat from "./BaseStat";
 import Evolution from "./Evolution";
+import Moves from "./Moves";
 
 const pageInfo = ["About", "Base Stat", "Evolution", "Moves"];
 
@@ -62,6 +63,12 @@ function PokemonInfo(props) {
         )}
         {currentPage === "evolution" && evolutionData && (
           <Evolution evolutionData={evolutionData} />
+        )}
+        {currentPage === "moves" && (
+          <Moves
+            moves={props.pokemonData.moves}
+            sprites={props.pokemonData.sprites}
+          />
         )}
       </div>
     </div>
