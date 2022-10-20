@@ -44,10 +44,6 @@ function DetailComponent(props) {
     setColorType(choosenColorType(pokemonData.types[0].type.name));
   }, [pokemonData]);
 
-  useEffect(() => {
-    console.log(pokemonData);
-  }, [pokemonData]);
-
   return (
     <div
       className="w-full min-h-[100vh] flex justify-between items-center relative"
@@ -68,6 +64,13 @@ function DetailComponent(props) {
       )}
       {pokemonData && !isLoading && <PokemonInfo pokemonData={pokemonData} />}
       {pokemonData && isLoading && <SkeletonLoadingHead />}
+      {pokemonData && !isLoading && (
+        <img
+          src={pokemonData.sprites.other.home["front_default"]}
+          alt="pokemon"
+          className="absolute w-[60%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-[75%]"
+        />
+      )}
     </div>
   );
 }

@@ -33,8 +33,8 @@ function PokemonInfo(props) {
   }, [props.pokemonData]);
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 w-full h-[45%] p-6 bg-primaryWhite shadow-xl flex flex-col justify-between items-center">
-      <ul className="w-full h-[25%] flex justify-between items-center bg-green-400">
+    <div className="absolute bottom-0 left-0 right-0 w-full h-[45%] p-6 bg-primaryWhite shadow-xl flex flex-col justify-between items-center rounded-t-3xl">
+      <ul className="w-full h-[25%] flex justify-between items-center">
         {pageInfo.map((item, i) => (
           <li
             key={Math.random() + i + ""}
@@ -49,7 +49,7 @@ function PokemonInfo(props) {
           </li>
         ))}
       </ul>
-      <div className="w-full h-[70%] py-3 bg-yellow-200">
+      <div className="w-full h-[70%] py-3">
         {currentPage === "about" && (
           <About
             species={props.pokemonData.species}
