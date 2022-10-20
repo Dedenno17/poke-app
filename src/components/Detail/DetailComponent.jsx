@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import pokeball from "../../assets/pokeball.png";
 import dotPattern from "../../assets/dot-pattern.png";
+import HeadName from "./HeadName";
 
 function DetailComponent(props) {
   const [pokemonData, setPokemonData] = useState(undefined);
@@ -100,7 +101,7 @@ function DetailComponent(props) {
 
   return (
     <div
-      className="w-full min-h-[100vh] flex justify-between items-center"
+      className="w-full min-h-[100vh] flex justify-between items-center relative"
       style={{ backgroundColor: colorType }}
     >
       <div className="w-[50%] h-full flex -translate-y-32 opacity-60">
@@ -109,7 +110,11 @@ function DetailComponent(props) {
       <div className="w-[50%] h-full -translate-y-14 translate-x-8 opacity-60">
         <img src={pokeball} alt="pokeball" className="w-full" />
       </div>
-      {/* <h1>{props.name}</h1> */}
+      <HeadName
+        name={pokemonData.name}
+        types={pokemonData.types}
+        order={pokemonData.order}
+      />
     </div>
   );
 }
